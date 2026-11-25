@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LexPrism Support</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="screen"><header class="head"><a class="name" href="index.html">LexPrism</a><nav aria-label="Pages"><a href="support.html" aria-current="page">Support</a><a href="privacy.html">Privacy</a></nav></header>
+<main><h1>LexPrism Support</h1>
+<section><h2>Walk through a grammar</h2><ol><li>In Grammar Library, load Sum expression and tap Analyze grammar.</li><li>Grammar Audit shows Ready for replay. Tap Nullable &amp; Sets and inspect FIRST for &lt;Tail&gt;.</li><li>Open Predictive Table and tap Tail × PLUS. The sample has 4 filled cells and 0 conflicts.</li><li>In Token Replay, run ID PLUS ID. The result is Accepted in 9 steps. At step 4 the parser expands &lt;Tail&gt; while PLUS is the lookahead.</li><li>Tap Freeze report. From Report Detail, preview the PDF or share its files.</li></ol></section>
+<section><h2>Write your own rules</h2><pre>%start &lt;Expr&gt;
+&lt;Expr&gt; ::= &lt;Term&gt; &lt;Tail&gt;
+&lt;Tail&gt; ::= PLUS &lt;Term&gt; &lt;Tail&gt; | EPS
+&lt;Term&gt; ::= ID</pre><p>Paste UTF-8 text in Rule Editor. Use uppercase named tokens, angle brackets for rule names and EPS for an empty alternative. A replay has up to 120 input tokens. Select an analyzed cell or diagnostic to inspect its source.</p></section>
+<section><h2>Contact</h2><p>Email <a href="mailto:asher11223366@gmail.com">asher11223366@gmail.com</a> with the app version, the rule or step you are inspecting and the observed behavior.</p></section>
+</main><footer>© 2026 Alan Howard</footer></div></body></html>
